@@ -5,114 +5,104 @@
 <h3 align="center">Show what you're watching on YouTube — as your Discord Rich Presence.</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Chrome-Extension-green?logo=googlechrome&logoColor=white" alt="Chrome">
-  <img src="https://img.shields.io/badge/Firefox-Add--on-orange?logo=firefox&logoColor=white" alt="Firefox">
-  <img src="https://img.shields.io/badge/Python-3.8+-blue?logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/License-MIT-gray" alt="License">
+  <img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome">
+  <img src="https://img.shields.io/badge/Firefox-Add--on-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox">
+  <img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Discord-Rich%20Presence-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
+  <img src="https://img.shields.io/badge/License-MIT-00ff00?style=for-the-badge" alt="License">
 </p>
 
+<br>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Features</b><br><br>
+      <code>• Video title & channel</code><br>
+      <code>• Video thumbnail</code><br>
+      <code>• Live elapsed / total time</code><br>
+      <code>• Watch Video button</code><br>
+      <code>• Auto-updates in 1s</code>
+    </td>
+    <td align="center" width="100">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </td>
+    <td align="center">
+      <b>Requirements</b><br><br>
+      <code>• Python 3.8+</code><br>
+      <code>• Discord Desktop App</code><br>
+      <code>• Chrome / Firefox</code><br>
+      <code>• pip install websockets pypresence</code>
+    </td>
+  </tr>
+</table>
+
+<br>
+
 ---
 
-## What it does
+## ⚡ Quick Start
 
-Play any YouTube video and your Discord profile automatically shows:
-
-- **Video title** and **channel name**
-- **Thumbnail** from the video
-- **Live elapsed / total time** bar
-- **"Watch Video"** button for your friends to click
-
-Pause a video — presence clears. Switch videos — it updates instantly.
-
----
-
-## Quick Start
-
-### 1. Install Python dependencies
+### 1. Install dependencies
 
 ```bash
 pip install websockets pypresence
 ```
 
-### 2. Set up your Discord Client ID
-
-1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
-2. Create an application (or use an existing one)
-3. Copy the **Client ID**
-4. Create `host/config.json`:
+### 2. Create `host/config.json`
 
 ```json
 {
-  "client_id": "YOUR_CLIENT_ID_HERE"
+  "client_id": "YOUR_DISCORD_CLIENT_ID"
 }
 ```
 
-> **Windows users:** Just double-click `start-server.bat` — it will open `config.json` for you automatically.
+> Get your Client ID from [Discord Developer Portal](https://discord.com/developers/applications)
 
 ### 3. Start the server
 
-**Windows:**
-```
-Double-click start-server.bat
-```
-
-**Linux / macOS:**
 ```bash
+# Windows: double-click start-server.bat
+
+# Linux / macOS:
 cd host
 python rpc_server.py
 ```
 
-Keep the terminal window open.
+### 4. Load the extension
 
-### 4. Load the browser extension
+| Browser | Steps |
+|---------|-------|
+| **Chrome** | `chrome://extensions` → Developer mode ON → Load unpacked → select `extension/` |
+| **Firefox** | `about:debugging` → Load Temporary Add-on → select `manifest.json` |
 
-**Chrome:**
-1. Open `chrome://extensions`
-2. Turn on **Developer mode** (top right)
-3. Click **Load unpacked**
-4. Select the `extension/` folder from this project
+### 5. Play a video
 
-**Firefox:**
-1. Open `about:debugging#/runtime/this-firefox`
-2. Click **Load Temporary Add-on**
-3. Select `extension/manifest.json`
-
-### 5. That's it
-
-Open [youtube.com](https://youtube.com), play any video. Your Discord status updates in ~1 second.
+Open YouTube, play anything — your Discord status updates automatically.
 
 ---
 
-## How it works
+## 🔧 How It Works
 
 ```
-YouTube page
-    │
-    ▼
-content.js  ──── detects video title, channel, thumbnail, timestamp
-    │
-    ▼
-background.js  ── sends data over WebSocket to local server
-    │
-    ▼
-rpc_server.py  ── receives data, pushes it to Discord via pypresence
-    │
-    ▼
-Discord  ──────── your profile shows the video info
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────┐
+│  YouTube    │───▶│  content.js │───▶│  background │───▶│  Server │───▶ Discord
+│  Page       │    │  (detect)   │    │  (bridge)   │    │  (RPC)  │
+└─────────────┘    └─────────────┘    └─────────────┘    └─────────┘
 ```
 
-Everything runs locally on your machine. No data is sent anywhere.
+Everything runs **locally** on your machine. No data is sent anywhere.
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 youtube-discord-rpc/
-├── extension/              # Browser extension
+├── extension/
 │   ├── manifest.json       # Extension config
 │   ├── content.js          # Detects YouTube video info
-│   ├── background.js       # Manages WebSocket connection
+│   ├── background.js       # WebSocket connection manager
 │   ├── popup.html/css/js   # Extension popup UI
 │   └── icons/              # Extension icons
 ├── host/
@@ -121,26 +111,51 @@ youtube-discord-rpc/
 │   └── config.json         # Your config (gitignored)
 ├── assets/
 │   └── logo.svg            # Project logo
-├── start-server.bat        # Windows one-click launcher
-├── .gitignore
+├── start-server.bat        # Windows launcher
+├── LICENSE
 └── README.md
 ```
 
 ---
 
-## Troubleshooting
+## 🐛 Troubleshooting
 
-| Problem | Fix |
-|---------|-----|
-| RPC not showing on Discord | Make sure `rpc_server.py` is running AND Discord desktop app is open |
-| Extension says "Disconnected" | Start the Python server first, then click **Refresh** in the popup |
-| "Discord not connected" in terminal | Start Discord first, then run the server. It retries every 30s automatically |
-| Thumbnail shows but title is wrong | Reload the YouTube page, the extension will re-detect everything |
-| Timer is lagging on Discord | The extension updates every 1 second, Discord may take a moment to reflect |
+<details>
+<summary><b>RPC not showing on Discord</b></summary>
+<br>
+
+- Make sure `rpc_server.py` is running
+- Make sure Discord desktop app is open
+- Check extension popup — status should say "Connected"
+</details>
+
+<details>
+<summary><b>Extension says "Disconnected"</b></summary>
+<br>
+
+- Start the Python server first
+- Click **Refresh** in the extension popup
+</details>
+
+<details>
+<summary><b>"Discord not connected" in terminal</b></summary>
+<br>
+
+- Start Discord first, then run the server
+- The server retries automatically every 30 seconds
+</details>
+
+<details>
+<summary><b>Thumbnail shows but title is wrong</b></summary>
+<br>
+
+- Reload the YouTube page
+- The extension will re-detect everything
+</details>
 
 ---
 
-## Contact
+## 📬 Contact
 
 <p align="center">
   <a href="https://t.me/Siryadav">
@@ -159,6 +174,6 @@ youtube-discord-rpc/
 
 ---
 
-## License
+## 📄 License
 
-[MIT](LICENSE)
+[MIT](LICENSE) — use it however you want.
