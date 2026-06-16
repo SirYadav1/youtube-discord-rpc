@@ -5,3 +5,4 @@ error.txt
 *.log
 .DS_Store
 Thumbs.db
+host/config.json

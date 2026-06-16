@@ -6,6 +6,7 @@ Run: python rpc_server.py
 
 import asyncio
 import json
+import os
 import sys
 import time
 import threading
@@ -23,8 +24,21 @@ except ImportError:
     print("[!] Install pypresence: pip install pypresence")
     sys.exit(1)
 
-CLIENT_ID = "1512498951419461703"
+CLIENT_ID = os.environ.get("YT_RPC_CLIENT_ID", "")
+
+if not CLIENT_ID:
+    config_path = os.path.join(os.path.dirname(__file__), "config.json")
+    if os.path.exists(config_path):
+        with open(config_path) as f:
+            cfg = json.load(f)
+            CLIENT_ID = cfg.get("client_id", "")
 WS_PORT = 8765
+
+if not CLIENT_ID:
+    print("[!] No client ID found!")
+    print("    Option 1: Set env var YT_RPC_CLIENT_ID")
+    print("    Option 2: Copy host/config.json.example to host/config.json and add your ID")
+    sys.exit(1)
 
 connected_clients = set()
 discord_rpc = None

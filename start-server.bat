@@ -1,6 +1,6 @@
 @echo off
 echo ============================================
-echo   YouTube Discord RPC Server v4.6
+echo   YouTube Discord RPC Server
 echo ============================================
 echo.
 
@@ -23,9 +23,21 @@ if errorlevel 1 (
     pip install pypresence
 )
 
+cd host
+
+if not exist config.json (
+    echo [!] config.json not found!
+    echo     Copying config.json.example to config.json...
+    echo     Edit config.json and add your Discord App Client ID.
+    echo.
+    copy config.json.example config.json >nul
+    notepad config.json
+    pause
+    exit /b 1
+)
+
 echo.
 echo [*] Starting RPC Server...
 echo.
-cd host
 python rpc_server.py
 pause
