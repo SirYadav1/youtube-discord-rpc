@@ -142,10 +142,12 @@ youtube-discord-rpc/
 
 ## Contact
 
-- **Telegram:** [@Siryadav](https://t.me/Siryadav)
-- **X (Twitter):** [@siryadav0](https://x.com/siryadav0)
-- **Gmail:** [osamabinladenfromindia@gmail.com](mailto:osamabinladenfromindia@gmail.com)
-- **PayPal:** [@SundramYadav4601](https://paypal.me/SundramYadav4601)
+<p align="center">
+  <a href="https://t.me/Siryadav"><img src="https://img.shields.io/badge/Telegram-@Siryadav-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
+  <a href="https://x.com/siryadav0"><img src="https://img.shields.io/badge/X-@siryadav0-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"></a>
+  <a href="mailto:osamabinladenfromindia@gmail.com"><img src="https://img.shields.io/badge/Gmail-Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a>
+  <a href="https://paypal.me/SundramYadav4601"><img src="https://img.shields.io/badge/PayPal-@SundramYadav4601-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="PayPal"></a>
+</p>
 
 ---
 
