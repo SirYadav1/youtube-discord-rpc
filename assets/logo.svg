@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff0000"/>
+      <stop offset="100%" style="stop-color:#cc0000"/>
+    </linearGradient>
+    <linearGradient id="blurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5865f2"/>
+      <stop offset="100%" style="stop-color:#4752c4"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="200" rx="16" fill="url(#bg)"/>
+
+  <!-- YouTube Icon -->
+  <g transform="translate(60, 50)" filter="url(#shadow)">
+    <rect width="100" height="100" rx="22" fill="url(#red)"/>
+    <polygon points="40,25 40,75 75,50" fill="white"/>
+  </g>
+
+  <!-- Arrow / Connection -->
+  <g transform="translate(185, 90)">
+    <line x1="0" y1="10" x2="50" y2="10" stroke="#5865f2" stroke-width="3" stroke-dasharray="6,4"/>
+    <polygon points="48,2 60,10 48,18" fill="#5865f2"/>
+  </g>
+
+  <!-- Discord Icon -->
+  <g transform="translate(260, 50)" filter="url(#shadow)">
+    <rect width="100" height="100" rx="22" fill="url(#blurple)"/>
+    <path d="M35 42c4 0 7-3.5 7-8s-3-8-7-8-7 3.5-7 8 3 8 7 8zm30 0c4 0 7-3.5 7-8s-3-8-7-8-7 3.5-7 8 3 8 7 8z" fill="white"/>
+    <path d="M28 65c3-2 6-4 7-5" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M72 65c-3-2-6-4-7-5" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M30 50c5 5 15 8 20 8s15-3 20-8" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- RPC Badge -->
+  <g transform="translate(390, 72)">
+    <rect width="80" height="56" rx="28" fill="#43b581" opacity="0.9"/>
+    <text x="40" y="36" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">RPC</text>
+  </g>
+
+  <!-- Title Text -->
+  <text x="510" y="95" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="white">YouTube</text>
+  <text x="510" y="140" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#5865f2">Discord RPC</text>
+
+  <!-- Tagline -->
+  <text x="510" y="170" font-family="Arial, sans-serif" font-size="14" fill="#aaa">Show what you watch. Flex on Discord.</text>
+</svg>
