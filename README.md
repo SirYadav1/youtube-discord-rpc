@@ -144,16 +144,16 @@ youtube-discord-rpc/
 
 <p align="center">
   <a href="https://t.me/Siryadav">
-    <img src="https://img.shields.io/badge/Telegram-Siryadav-26A5E4?style=flat-square&logo=telegram&logoColor=white&labelColor=26A5E4&height=35" alt="Telegram">
+    <img src="https://img.shields.io/badge/Telegram-Siryadav-26A5E4?style=flat-square&logo=telegram&logoColor=white&labelColor=26A5E4&height=35&borderRadius=10" alt="Telegram">
   </a>&nbsp;
   <a href="https://x.com/siryadav0">
-    <img src="https://img.shields.io/badge/X-@siryadav0-000000?style=flat-square&logo=x&logoColor=white&labelColor=000000&height=35" alt="X">
+    <img src="https://img.shields.io/badge/X-@siryadav0-000000?style=flat-square&logo=x&logoColor=white&labelColor=000000&height=35&borderRadius=10" alt="X">
   </a>&nbsp;
   <a href="mailto:osamabinladenfromindia@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-Email-EA4335?style=flat-square&logo=gmail&logoColor=white&labelColor=EA4335&height=35" alt="Gmail">
+    <img src="https://img.shields.io/badge/Gmail-Email-EA4335?style=flat-square&logo=gmail&logoColor=white&labelColor=EA4335&height=35&borderRadius=10" alt="Gmail">
   </a>&nbsp;
   <a href="https://paypal.me/SundramYadav4601">
-    <img src="https://img.shields.io/badge/PayPal-SundramYadav-00457C?style=flat-square&logo=paypal&logoColor=white&labelColor=00457C&height=35" alt="PayPal">
+    <img src="https://img.shields.io/badge/PayPal-SundramYadav-00457C?style=flat-square&logo=paypal&logoColor=white&labelColor=00457C&height=35&borderRadius=10" alt="PayPal">
   </a>
 </p>
 
