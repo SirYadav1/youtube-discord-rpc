@@ -5,11 +5,20 @@
 <h3 align="center">Show what you're watching on YouTube — as your Discord Rich Presence.</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome">
-  <img src="https://img.shields.io/badge/Firefox-Add--on-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox">
-  <img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Discord-Rich%20Presence-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
-  <img src="https://img.shields.io/badge/License-MIT-00ff00?style=for-the-badge" alt="License">
+  <a href="https://github.com/SirYadav1/youtube-discord-rpc/stargazers"><img src="https://img.shields.io/github/stars/SirYadav1/youtube-discord-rpc?style=flat-square&logo=github&color=yellow&label=Stars" alt="Stars"></a>
+  <a href="https://github.com/SirYadav1/youtube-discord-rpc/network/members"><img src="https://img.shields.io/github/forks/SirYadav1/youtube-discord-rpc?style=flat-square&logo=github&color=blue&label=Forks" alt="Forks"></a>
+  <a href="https://github.com/SirYadav1/youtube-discord-rpc/issues"><img src="https://img.shields.io/github/issues/SirYadav1/youtube-discord-rpc?style=flat-square&logo=github&color=red&label=Issues" alt="Issues"></a>
+  <a href="https://github.com/SirYadav1/youtube-discord-rpc/pulls"><img src="https://img.shields.io/github/issues-pr/SirYadav1/youtube-discord-rpc?style=flat-square&logo=github&color=green&label=PRs" alt="PRs"></a>
+  <a href="https://github.com/SirYadav1/youtube-discord-rpc/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SirYadav1/youtube-discord-rpc?style=flat-square&color=purple&label=License" alt="License"></a>
+  <img src="https://img.shields.io/github/last-commit/SirYadav1/youtube-discord-rpc?style=flat-square&color=orange&label=Last%20Commit" alt="Last Commit">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome">
+  <img src="https://img.shields.io/badge/Firefox-Add--on-FF7139?style=flat-square&logo=firefox&logoColor=white" alt="Firefox">
+  <img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Discord-Rich%20Presence-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord">
+  <img src="https://img.shields.io/badge/License-MIT-00ff00?style=flat-square" alt="License">
 </p>
 
 <br>
