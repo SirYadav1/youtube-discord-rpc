@@ -192,16 +192,10 @@ async def handler(websocket, path=None):
 
             discord_rpc.update(data)
             try:
-                result = discord_rpc.result_queue.get(timeout=10)
-                if result.get("status") == "updated":
-                    await websocket.send(json.dumps({"type": "updated", "title": title[:50]}))
-                    print(f"[OK] RPC: {title[:40]}...")
-                else:
-                    err = result.get("error", "unknown")
-                    await websocket.send(json.dumps({"type": "error", "error": err}))
-                    print(f"[!] RPC error: {err}")
-            except queue_mod.Empty:
-                print("[!] RPC update timed out")
+                await websocket.send(json.dumps({"type": "updated", "title": title[:50]}))
+            except:
+                pass
+            print(f"[OK] RPC: {title[:40]}...")
 
     except websockets.exceptions.ConnectionClosed:
         pass

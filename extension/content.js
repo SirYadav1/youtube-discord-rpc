@@ -2,7 +2,9 @@
   'use strict';
 
   let currentVideoId = null;
+  let lastSentKey = null;
   let intervalId = null;
+  let pendingVideoChange = null;
 
   function getVideoInfo() {
     try {
@@ -33,15 +35,20 @@
     }
   }
 
-  function sendVideoInfo() {
+  function sendVideoInfo(force) {
     const info = getVideoInfo();
     if (!info) return;
 
-    const videoKey = `${info.videoId}_${info.playing}`;
-    if (videoKey === currentVideoId) return;
-    currentVideoId = videoKey;
-
     const api = (typeof browser !== 'undefined') ? browser : chrome;
+
+    if (force) {
+      lastSentKey = null;
+    }
+
+    const sendKey = `${info.videoId}_${info.playing}_${info.title}`;
+    if (sendKey === lastSentKey) return;
+    lastSentKey = sendKey;
+
     api.runtime.sendMessage({ type: 'YT_RPC_VIDEO_INFO', data: info }, () => {
       if (chrome.runtime.lastError) {}
     });
@@ -49,35 +56,43 @@
 
   function startMonitoring() {
     if (intervalId) clearInterval(intervalId);
-    intervalId = setInterval(sendVideoInfo, 3000);
-    sendVideoInfo();
+    intervalId = setInterval(function() { sendVideoInfo(false); }, 1000);
+    sendVideoInfo(true);
 
     const video = document.querySelector('video');
     if (video) {
-      video.addEventListener('play', sendVideoInfo);
-      video.addEventListener('pause', sendVideoInfo);
-      video.addEventListener('ended', sendVideoInfo);
+      video.addEventListener('play', function() { sendVideoInfo(true); });
+      video.addEventListener('pause', function() { sendVideoInfo(true); });
+      video.addEventListener('ended', function() { sendVideoInfo(true); });
     }
+  }
+
+  function handleVideoChange() {
+    if (pendingVideoChange) clearTimeout(pendingVideoChange);
+    pendingVideoChange = setTimeout(function() {
+      lastSentKey = null;
+      startMonitoring();
+    }, 500);
   }
 
   function init() {
     if (!window.location.search.includes('v=')) return;
-    const check = setInterval(() => {
+    const check = setInterval(function() {
       if (document.querySelector('video')) {
         clearInterval(check);
         startMonitoring();
       }
-    }, 1000);
-    setTimeout(() => clearInterval(check), 10000);
+    }, 500);
+    setTimeout(function() { clearInterval(check); }, 8000);
   }
 
   let lastUrl = location.href;
-  new MutationObserver(() => {
+  new MutationObserver(function() {
     if (location.href !== lastUrl) {
       lastUrl = location.href;
       if (intervalId) clearInterval(intervalId);
       currentVideoId = null;
-      setTimeout(init, 1000);
+      handleVideoChange();
     }
   }).observe(document.body, { childList: true, subtree: true });
 
