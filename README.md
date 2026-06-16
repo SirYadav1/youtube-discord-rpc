@@ -140,6 +140,15 @@ youtube-discord-rpc/
 
 ---
 
+## Contact
+
+- **Telegram:** [@Siryadav](https://t.me/Siryadav)
+- **X (Twitter):** [@siryadav0](https://x.com/siryadav0)
+- **Gmail:** [osamabinladenfromindia@gmail.com](mailto:osamabinladenfromindia@gmail.com)
+- **PayPal:** [@SundramYadav4601](https://paypal.me/SundramYadav4601)
+
+---
+
 ## License
 
 [MIT](LICENSE)
