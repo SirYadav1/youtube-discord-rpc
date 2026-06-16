@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">YT</div>
+      <div class="title">YouTube Discord RPC</div>
+    </div>
+
+    <div class="status-section">
+      <div class="status-row">
+        <span class="status-label">Status:</span>
+        <span id="statusBadge" class="status-badge disconnected">Disconnected</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Server:</span>
+        <span id="serverStatus" class="status-text">Checking...</span>
+      </div>
+    </div>
+
+    <div id="videoInfo" class="video-section hidden">
+      <div class="video-title" id="videoTitle">-</div>
+      <div class="video-channel" id="videoChannel">-</div>
+    </div>
+
+    <div class="toggle-section">
+      <label class="toggle">
+        <input type="checkbox" id="rpcToggle" checked>
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">Enable RPC</span>
+    </div>
+
+    <div class="footer">
+      <button id="refreshBtn" class="btn">Refresh</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
